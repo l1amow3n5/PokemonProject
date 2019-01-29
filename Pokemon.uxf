@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>70</y>
+      <w>250</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>poke.model::Pokemon
+--
+- number : int
+
+
+--
++ Pokemon(String,int) : constructor
+
++ get/set
+bg=83745
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>970</x>
+      <y>130</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Jigglypuff
+--
+taunt();
+takle();
+
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>350</y>
+      <w>170</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Bulbasaur
+--
+whip();
+cut();
+slash();
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>130</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Pikachu
+--
+stun();
+shock();
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>350</y>
+      <w>190</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Squirtle
+--
+waterBlast();
+bigWave();
+bg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>350</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Charizard
+--
+burn();
+fireBall();
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>180</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Extends
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>220</y>
+      <w>130</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Extends
+</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>220</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Extends
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>220</y>
+      <w>150</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Extends
+</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>120</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Extends
+</panel_attributes>
+    <additional_attributes>150.0;30.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1300</x>
+      <y>340</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>/Water/
+--
+waterBlast();
+bigWave();
+bg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>610</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/Grass/
+--
+cut();
+slash();
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>310</y>
+      <w>180</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>/Fire/
+--
+burn();
+fireball();
+bg=red
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>40</y>
+      <w>180</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>/Electric/
+--
+stun();
+shock();
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1320</x>
+      <y>60</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>/Fairy/
+--
+taunt();
+takle();
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1130</x>
+      <y>130</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+Implements
+</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1120</x>
+      <y>380</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+Implements
+</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>510</y>
+      <w>110</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+Implements
+</panel_attributes>
+    <additional_attributes>20.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>380</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+Implements
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>150</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+Implements
+</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;50.0</additional_attributes>
+  </element>
+</diagram>
