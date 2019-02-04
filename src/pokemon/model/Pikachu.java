@@ -16,4 +16,9 @@ public class Pikachu extends Pokemon implements Electric
 	{
 		return 123445; 
 	}
+	
+	public void storm()
+	{
+		
+	}
 }
