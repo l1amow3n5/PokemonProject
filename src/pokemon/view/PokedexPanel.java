@@ -39,21 +39,24 @@ public class PokedexPanel extends JPanel
 		
 		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/bulbasaur.jpeg"));
 		this.appLayout = new SpringLayout();
+		changeButton = new JButton("Click here to change the pokevalues");
 		
-		numberField = new JTextField("00");
-		nameField = new JTextField("Name");
-		evolveField = new JTextField("false");
-		attackField = new JTextField("0");
-		enhanceField = new JTextField("0");
+		numberField = new JTextField("00");		
+		nameField = new JTextField("Name");		
+		evolveField = new JTextField("false");		
+		attackField = new JTextField("0");		
+		enhanceField = new JTextField("0");		
 		healthField = new JTextField("0");
 		
-		imageLabel = new JLabel("Pokemon goes here", pokemonIcon, JLabel.CENTER);
-		nameLabel = new JLabel("What is your pokemons name");
-		healthLabel = new JLabel("How much health does your pokemon have");
-		numberLabel = new JLabel("What number is your pokemon");
-		evolveLabel = new JLabel("Does your pokemon evolve");
-		enhanceLabel = new JLabel("Can you enhance your pokemon");
+		
+		imageLabel = new JLabel("Pokemon goes here", pokemonIcon, JLabel.CENTER);		
+		nameLabel = new JLabel("What is your pokemons name");		
+		healthLabel = new JLabel("How much health does your pokemon have");		
+		numberLabel = new JLabel("What number is your pokemon");		
+		evolveLabel = new JLabel("Does your pokemon evolve");		
+		enhanceLabel = new JLabel("Can you enhance your pokemon");		
 		attackLabel = new JLabel("My attack is");
+		
 		
 		setupDropdown();
 		setupPanel();
@@ -97,8 +100,32 @@ public class PokedexPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
-	
+		appLayout.putConstraint(SpringLayout.NORTH, numberField, 89, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, numberField, -84, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, nameField, 25, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, nameField, -215, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, evolveField, 263, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, evolveField, -296, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, attackField, -250, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, attackField, -380, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, enhanceField, 339, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, enhanceField, -144, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, healthField, 118, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, healthField, 195, SpringLayout.EAST, imageLabel);
+		appLayout.putConstraint(SpringLayout.WEST, imageLabel, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 221, SpringLayout.NORTH, imageLabel);
+		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -132, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, healthLabel, 0, SpringLayout.WEST, evolveField);
+		appLayout.putConstraint(SpringLayout.SOUTH, healthLabel, -46, SpringLayout.NORTH, evolveField);
+		appLayout.putConstraint(SpringLayout.SOUTH, numberLabel, -86, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, numberLabel, 0, SpringLayout.EAST, nameLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, imageLabel, -121, SpringLayout.NORTH, evolveLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, evolveLabel, 0, SpringLayout.NORTH, numberLabel);
+		appLayout.putConstraint(SpringLayout.EAST, evolveLabel, -130, SpringLayout.WEST, numberLabel);
+		appLayout.putConstraint(SpringLayout.WEST, enhanceLabel, 91, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, enhanceLabel, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, attackLabel, 0, SpringLayout.NORTH, enhanceLabel);
+		appLayout.putConstraint(SpringLayout.EAST, attackLabel, -211, SpringLayout.EAST, this);
 	}
 	
 	private void sendDataToController()
