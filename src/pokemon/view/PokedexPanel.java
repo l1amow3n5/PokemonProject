@@ -10,35 +10,45 @@ public class PokedexPanel extends JPanel
 	private PokedexController app; 
 	private SpringLayout appLayout;
 	
-	private JTextField PikachuText;
-	private JTextField CharizardText; 
-	private JTextField BulbasaurText; 
-	private JTextField SquirtleText; 
-	private JTextField JigglypuffText;
+	private JTextField numberField;
+	private JTextField nameField; 
+	private JTextField evolveField; 
+	private JTextField attackField; 
+	private JTextField enhanceField;
+	private JTextField healthField;
 	
-	private JLabel PikachuLabel;
-	private JLabel CharizardLabel;
-	private JLabel BulbasaurLabel;
-	private JLabel SquirtleLabel;
-	private JLabel JigglypuffLabel;
+	private JLabel numberLabel;
+	private JLabel nameLabel;
+	private JLabel healthLabel;
+	private JLabel imageLabel;
+	private JLabel evolveLabel;
+	private JLabel enhanceLabel;
+	private JLabel attackLabel;
+	
+	private ImageIcon pokemonIcon;
 	
 	public PokedexPanel(PokedexController app)
 	{
 		super();
 		
 		this.app = app;
-		PikachuText = new JTextField("Pik");
-		CharizardText = new JTextField("Char");
-		BulbasaurText = new JTextField("Bulb");
-		SquirtleText = new JTextField("Squi");
-		JigglypuffText = new JTextField("Jiggy");
 		
-		PikachuLabel = new JLabel("Pikachu");
-		CharizardLabel = new JLabel("Charizard");
-		BulbasaurLabel = new JLabel("Bulbasaur");
-		SquirtleLabel = new JLabel("Squirtle");
-		JigglypuffLabel = new JLabel("Jigglypuff");
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/bulbasaur.jpeg"));
 		
+		numberField = new JTextField("00");
+		nameField = new JTextField("Name");
+		evolveField = new JTextField("false");
+		attackField = new JTextField("0");
+		enhanceField = new JTextField("0");
+		healthField = new JTextField("0");
+		
+		imageLabel = new JLabel("Pokemon goes here", pokemonIcon, JLabel.CENTER);
+		nameLabel = new JLabel("What is your pokemons name");
+		healthLabel = new JLabel("How much health does your pokemon have");
+		numberLabel = new JLabel("What number is your pokemon");
+		evolveLabel = new JLabel("Does your pokemon evolve");
+		enhanceLabel = new JLabel("Can you enhance your pokemon");
+		attackLabel = new JLabel("My attack is");
 		
 		
 		setupPanel();
@@ -51,11 +61,41 @@ public class PokedexPanel extends JPanel
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(Color.RED);
+		
+		this.add(numberField);
+		this.add(nameField);
+		this.add(evolveField);
+		this.add(attackField);
+		this.add(enhanceField);
+		this.add(healthField);
+		
+		this.add(imageLabel);
+		this.add(nameLabel);
+		this.add(healthLabel);
+		this.add(numberLabel);
+		this.add(evolveLabel);
+		this.add(enhanceLabel);
+		this.add(attackLabel);
+		
+		imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
+		imageLabel.setHorizontalTextPosition(JLabel.CENTER);
 	}
 	
 	private void setupLayout()
 	{
 		
+	}
+
+	private void sendDataToController()
+	{
+		int index = pokedexDropdown.getSelectedIndex();
+		
+		if(app.isInt(attackField.getText()) && app.isDouble(enhanceField.getText()) && app.isInt(healthField.getText()))
+		{
+			String [] data = new String[5];
+			
+			app.updatePokemon(index, data);
+		}
 	}
 	
 	private void setupListeners()
