@@ -38,6 +38,7 @@ public class PokedexPanel extends JPanel
 		this.app = app;
 		
 		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/bulbasaur.jpeg"));
+		this.appLayout = new SpringLayout();
 		
 		numberField = new JTextField("00");
 		nameField = new JTextField("Name");
@@ -54,10 +55,16 @@ public class PokedexPanel extends JPanel
 		enhanceLabel = new JLabel("Can you enhance your pokemon");
 		attackLabel = new JLabel("My attack is");
 		
-		
+		setupDropdown();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupDropdown()
+	{
+		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(app.buildPokedexText());
+		pokedexDropdown.setModel(temp);
 	}
 	
 	private void setupPanel()
@@ -91,8 +98,9 @@ public class PokedexPanel extends JPanel
 	private void setupLayout()
 	{
 		
+	
 	}
-
+	
 	private void sendDataToController()
 	{
 		int index = pokedexDropdown.getSelectedIndex();
