@@ -8,20 +8,20 @@ import pokemon.model.*;
 public class PokedexController
 {
 	private PokedexFrame appFrame;
-	private Pikachu pik;
-	private Bulbasaur bul;
-	private Squirtle squ;
-	private Charizard cha;
-	private Jigglypuff jig;
+//	private Pikachu pik;
+//	private Bulbasaur bul;
+//	private Squirtle squ;
+//	private Charizard cha;
+//	private Jigglypuff jig;
 	private ArrayList<Pokemon> pokemonList;
 	
 	public PokedexController()
 	{
-		pik = new Pikachu(59, "Arcanine");
-		bul = new Bulbasaur(144, "Articuno");
-		squ = new Squirtle(149, "Dragonite");
-		cha = new Charizard(679, "Lampent");
-		jig = new Jigglypuff(608, "Hoonedge");
+//		pik = new Pikachu(59, "Arcanine");
+//		bul = new Bulbasaur(144, "Articuno");
+//		squ = new Squirtle(149, "Dragonite");
+//		cha = new Charizard(679, "Lampent");
+//		jig = new Jigglypuff(608, "Hoonedge");
 		appFrame = new PokedexFrame(this);
 		pokemonList = new ArrayList<Pokemon>();
 	}
