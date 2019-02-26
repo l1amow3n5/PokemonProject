@@ -13,6 +13,7 @@ public class PokedexPanel extends JPanel
 	private JComboBox<String> pokedexDropdown;
 	
 	private JButton changeButton;
+	private JButton saveButton;
 	
 	private JTextField numberField;
 	private JTextField nameField; 
@@ -40,6 +41,7 @@ public class PokedexPanel extends JPanel
 		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/bulbasaur.jpeg"));
 		this.appLayout = new SpringLayout();
 		changeButton = new JButton("Click here to change the pokevalues");
+		saveButton = new JButton("save the pokedex");
 		
 		numberField = new JTextField("00");		
 		nameField = new JTextField("Name");		
@@ -84,6 +86,7 @@ public class PokedexPanel extends JPanel
 		this.add(healthField);
 		
 		this.add(changeButton);
+		this.add(saveButton);
 		this.add(pokedexDropdown);
 		
 		this.add(imageLabel);
@@ -144,7 +147,7 @@ public class PokedexPanel extends JPanel
 	private void changeImageDisplay(String name)
 	{
 		String path = "/pokemon/view/images/";
-		String defaultName = "arc";
+		String defaultName = "bulbasaur";
 		String extension = ".jpeg";
 		
 		try 
@@ -168,6 +171,15 @@ public class PokedexPanel extends JPanel
 				sendDataToController();
 			}
 		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				app.savePokedex();
+			}
+		});
+		
 		pokedexDropdown.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent selection)

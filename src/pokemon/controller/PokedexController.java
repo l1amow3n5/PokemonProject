@@ -4,26 +4,66 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import pokemon.view.PokedexFrame;
 import pokemon.model.*;
+import java.io.*;
 
 public class PokedexController
 {
 	private PokedexFrame appFrame;
-//	private Pikachu pik;
-//	private Bulbasaur bul;
-//	private Squirtle squ;
-//	private Charizard cha;
-//	private Jigglypuff jig;
 	private ArrayList<Pokemon> pokemonList;
+	private String saveFile = "backup.pokemon";
 	
 	public PokedexController()
 	{
-//		pik = new Pikachu(59, "Arcanine");
-//		bul = new Bulbasaur(144, "Articuno");
-//		squ = new Squirtle(149, "Dragonite");
-//		cha = new Charizard(679, "Lampent");
-//		jig = new Jigglypuff(608, "Hoonedge");
 		appFrame = new PokedexFrame(this);
 		pokemonList = new ArrayList<Pokemon>();
+		addPokemon();
+	}
+	
+	private void addPokemon()
+	{
+		pokemonList.add(new Pikachu());
+		pokemonList.add(new Bulbasaur());
+		pokemonList.add(new Squirtle());
+		pokemonList.add(new Charizard());
+		pokemonList.add(new Jigglypuff());
+	}
+	
+	public void savePokedex()
+	{
+		try
+		{
+			FileOutputStream saveStream = new FileOutputStream(saveFile);
+			ObjectOutputStream output = new ObjectOutputStream(saveStream);
+			output.writeObject(pokemonList);
+			output.close();
+			saveStream.close();
+		}
+		catch(IOException error)
+		{
+			JOptionPane.showMessageDialog(appFrame, error.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
+	public void loadPokedex()
+	{
+		try
+		{
+			ArrayList<Pokemon> saved = new ArrayList<Pokemon>();
+			FileInputStream inputStream = new FileInputStream(saveFile);
+			ObjectInputStream input = new ObjectInputStream(inputStream);
+			saved = (ArrayList<Pokemon>) input.readObject();
+			input.close();
+			inputStream.close();
+			pokemonList = saved;	
+		}
+		catch(IOException error)
+		{
+			JOptionPane.showMessageDialog(appFrame, "No Save File", "Loading Pokemon", JOptionPane.INFORMATION_MESSAGE);
+		}
+		catch (ClassNotFoundException pokemonError)
+		{
+			JOptionPane.showMessageDialog(appFrame, pokemonError.getMessage(), "Type Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
 	public void updatePokemon(int index, String [] data)
@@ -41,6 +81,8 @@ public class PokedexController
 	
 	public String[] buildPokedexText()
 	{
+//		addPokemon();
+		
 		String [] names = new String [pokemonList.size()];
 		
 		for(int index = 0; index < pokemonList.size(); index++)
