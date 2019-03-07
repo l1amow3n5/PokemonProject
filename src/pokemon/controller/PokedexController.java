@@ -26,6 +26,7 @@ public class PokedexController
 		pokemonList.add(new Squirtle());
 		pokemonList.add(new Charizard());
 		pokemonList.add(new Jigglypuff());
+		pokemonList.add(new DrMangosteen());
 	}
 	
 	public void savePokedex()

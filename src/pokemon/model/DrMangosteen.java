@@ -4,7 +4,7 @@ public class DrMangosteen extends Pokemon implements Grass
 {
 	public DrMangosteen()
 	{
-		super(808, "Squirtle");
+		super(808, "DrMangosteen");
 	}
 	public DrMangosteen(String name)
 	{
